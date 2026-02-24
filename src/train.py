@@ -33,6 +33,7 @@ def print_basic_statistics(df: pd.DataFrame) -> None:
 def train_and_evaluate(df: pd.DataFrame, model_path: Path) -> None:
     X = df.drop(columns=["species"])
     y = df["species"]
+    print(f"Feature columns: {X.columns.tolist()}")
 
     X_train, X_test, y_train, y_test = train_test_split(
         X,
