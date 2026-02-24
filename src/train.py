@@ -41,6 +41,7 @@ def train_and_evaluate(df: pd.DataFrame, model_path: Path) -> None:
         random_state=42,
         stratify=y,
     )
+    print(f"\nTrain size: {len(X_train)} | Test size: {len(X_test)}")
 
     model = LogisticRegression(max_iter=300)
     model.fit(X_train, y_train)
